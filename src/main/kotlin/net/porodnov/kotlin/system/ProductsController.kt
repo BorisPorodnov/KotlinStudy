@@ -4,6 +4,7 @@ import net.porodnov.kotlin.service.ProductService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
+/*
 @RestController // Сообщаем как обрабатывать http запросы и в каком виде отправлять ответы (сериализация в JSON и обратно)
 @RequestMapping("products") // Указываем префикс маршрута для всех экшенов
 class ProductsController(private val productService: ProductService) { // Внедряем наш сервис в качестве зависимости
@@ -25,4 +26,4 @@ class ProductsController(private val productService: ProductService) { // Вне
     @DeleteMapping("{id}")
     fun delete(@PathVariable id: Long) = productService.remove(id)
 
-}
+}*/

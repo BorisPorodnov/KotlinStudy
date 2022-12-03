@@ -8,14 +8,18 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/api/bankAccount")
 class BankController(var bankAccountService: BankAccountService) {
+    @GetMapping("/api/v1")
+    fun foo(): String {
+        return "Hello World"
+    }
 
     @PostMapping
-    fun addBankAccount(@RequestBody bankAccount:BankAccount) : ResponseEntity<BankAccount> {
+    fun addBankAccount(@RequestBody bankAccount: BankAccount): ResponseEntity<BankAccount> {
         return ResponseEntity.ok(bankAccountService.addBankAccount(bankAccount))
     }
 
     @GetMapping
-    fun getBankAccount(@RequestParam id:Long) : ResponseEntity<BankAccount> {
+    fun getBankAccount(@RequestParam id: Long): ResponseEntity<BankAccount> {
         val bankAccount: BankAccount? = bankAccountService.getBankAccount(id);
         return if (bankAccount != null) {
             ResponseEntity(bankAccount, HttpStatus.OK)
